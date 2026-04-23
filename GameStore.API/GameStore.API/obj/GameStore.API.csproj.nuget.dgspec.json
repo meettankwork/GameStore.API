@@ -1,29 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Backend\\GameStore.API\\GameStore.API\\GameStore.API.csproj": {}
+    "D:\\Backend\\GameStore.API\\GameStore.API\\GameStore.API\\GameStore.API\\GameStore.API.csproj": {}
   },
   "projects": {
-    "D:\\Backend\\GameStore.API\\GameStore.API\\GameStore.API.csproj": {
+    "D:\\Backend\\GameStore.API\\GameStore.API\\GameStore.API\\GameStore.API\\GameStore.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Backend\\GameStore.API\\GameStore.API\\GameStore.API.csproj",
+        "projectUniqueName": "D:\\Backend\\GameStore.API\\GameStore.API\\GameStore.API\\GameStore.API\\GameStore.API.csproj",
         "projectName": "GameStore.API",
-        "projectPath": "D:\\Backend\\GameStore.API\\GameStore.API\\GameStore.API.csproj",
-        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Backend\\GameStore.API\\GameStore.API\\obj\\",
+        "projectPath": "D:\\Backend\\GameStore.API\\GameStore.API\\GameStore.API\\GameStore.API\\GameStore.API.csproj",
+        "packagesPath": "C:\\Users\\meett\\.nuget\\packages\\",
+        "outputPath": "D:\\Backend\\GameStore.API\\GameStore.API\\GameStore.API\\GameStore.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config"
+          "C:\\Users\\meett\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -66,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",

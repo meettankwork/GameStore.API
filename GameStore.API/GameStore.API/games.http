@@ -1,1 +1,31 @@
-GET http://localhost:5167
+GET http://localhost:5167/games
+
+// by giving 3# it seprect request just like ( ; )
+
+### get game by id
+GET http://localhost:5167/games/5
+
+###
+POST http://localhost:5167/games
+Content-Type: application/json
+
+{
+    "name": "Super Mario Bros.",
+    "genre": "Platformer",
+    "price": 119.99,
+    "releaseDate": "2023-10-20"
+}
+
+###
+PUT  http://localhost:5167/games/5
+Content-Type: application/json
+
+{
+    "name": "Valorent.",
+    "genre": "Shooting",
+    "price": 119.99,
+    "releaseDate": "2023-10-20"
+}
+
+### 
+DELETE http://localhost:5167/games/5
