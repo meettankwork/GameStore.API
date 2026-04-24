@@ -1,4 +1,6 @@
+using GameStore.API.Data;
 using GameStore.API.Dtos;
+using GameStore.API.Models;
 
 namespace GameStore.API.EndPoints;
 
@@ -52,34 +54,53 @@ public static class GamesEndPoints
         groups.MapGet("/", () => games);
 
         // GET /games/1
-        groups.MapGet("/{id}", (int id) =>
+        groups.MapGet("/{id}", async (int id, GameStoreContext dbContext) =>
         {
-            var game = games.Find(games => games.Id == id);
+            var game = await dbContext.Games.FindAsync(id);
 
-            return game is null ? Results.NotFound() : Results.Ok(game); // contidion if game exists then return game-Ok or NotFound
+            return game is null ? Results.NotFound() : Results.Ok(
+                new GameDetailsDto(
+                    game.Id,
+                    game.Name,
+                    game.GenreId,
+                    game.Price,
+                    game.ReleaseDate
+                )
+            ); // contidion if game exists then return game-Ok or NotFound
         })
         .WithName(GetGameEndpointName); //checking Id from over List of Games
 
         // Post /games
-        groups.MapPost("/", (CreateGameDtos newGame) =>
-        {
+        groups.MapPost("/", async (CreateGameDtos newGame, GameStoreContext dbContext) =>
+         {
 
             if (string.IsNullOrEmpty(newGame.Name))
             {
                 return Results.BadRequest("Name is Required");
             }
 
-            GameDto game = new(
-                games.Count + 1 ,
-                newGame.Name,
-                newGame.Genre,
-                newGame.Price,
-                newGame.ReleaseDate
+            Games game = new()
+            {
+              Name = newGame.Name,
+              GenreId = newGame.GenreId,
+              Price = newGame.Price,
+              ReleaseDate = newGame.ReleaseDate
+            };
+
+            dbContext.Games.Add(game); // just to keep track not sql query
+
+            await dbContext.SaveChangesAsync(); // this give sql statments
+
+            // Bcz of security reasons
+            GameDetailsDto gameDetails = new(
+                game.Id,
+                game.Name,
+                game.GenreId,
+                game.Price,
+                game.ReleaseDate
             );
 
-            games.Add(game);
-
-            return Results.CreatedAtRoute(GetGameEndpointName, new{id = game.Id}, game);
+            return Results.CreatedAtRoute(GetGameEndpointName, new{id = gameDetails.Id}, gameDetails);
         });
 
         // Put /games/1

@@ -3,7 +3,7 @@ GET http://localhost:5167/games
 // by giving 3# it seprect request just like ( ; )
 
 ### get game by id
-GET http://localhost:5167/games/5
+GET http://localhost:5167/games/4
 
 ###
 POST http://localhost:5167/games
@@ -11,8 +11,8 @@ Content-Type: application/json
 
 {
     "name": "Super Mario Bros",
-    "genre": "Platformer",
-    "price": 199.99,
+    "genreId": 2,
+    "price": 99.99,
     "releaseDate": "2023-10-20"
 }
 
