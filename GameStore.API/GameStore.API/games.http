@@ -10,9 +10,9 @@ POST http://localhost:5167/games
 Content-Type: application/json
 
 {
-    "name": "Super Mario Bros.",
+    "name": "Super Mario Bros",
     "genre": "Platformer",
-    "price": 119.99,
+    "price": 199.99,
     "releaseDate": "2023-10-20"
 }
 
