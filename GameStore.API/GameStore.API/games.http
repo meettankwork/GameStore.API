@@ -1,31 +1,35 @@
-GET http://localhost:5167/games
 
+GET http://localhost:5167/genres/
+
+###
+GET http://localhost:5167/games
+ 
 // by giving 3# it seprect request just like ( ; )
 
 ### get game by id
-GET http://localhost:5167/games/4
+GET http://localhost:5167/games/5
 
 ###
 POST http://localhost:5167/games
 Content-Type: application/json
 
 {
-    "name": "Super Mario Bros",
-    "genreId": 2,
-    "price": 99.99,
+    "name": "GTA5 ",
+    "genreId": 3,
+    "price": 199.99,
     "releaseDate": "2023-10-20"
 }
 
 ###
-PUT  http://localhost:5167/games/5
+PUT  http://localhost:5167/games/1
 Content-Type: application/json
 
 {
-    "name": "Valorent.",
-    "genre": "Shooting",
+    "name": "GTA 5.",
+    "genreId": 4,
     "price": 119.99,
     "releaseDate": "2023-10-20"
 }
 
 ### 
-DELETE http://localhost:5167/games/5
+DELETE http://localhost:5167/games/3
